@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import Footer from "@/components/layout/Footer";
-import MainContent from "@/components/layout/MainContent";
 import GameInitializer from "./providers/GameInitializer";
 
 const geistSans = Geist({
@@ -36,7 +35,7 @@ export default function RootLayout({
                     <Header />
                     <Breadcrumbs />
                 </div>
-                <MainContent>{children}</MainContent>
+                <main className="flex-1">{children}</main>
                 <Footer />
             </body>
         </html>

@@ -12,5 +12,5 @@ export default function GamePage() {
 
     if (!game) return <GameNotFound gameId={gameId} />;
 
-    return <GameContainer game={game} />;
+    return <GameContainer game={game} allGames={games} />;
 }

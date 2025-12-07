@@ -1,5 +1,3 @@
-"use client";
-
 import FeaturedGames from "@/components/games/FeaturedGames";
 import Features from "@/components/sections/Features";
 import Banner from "@/components/sections/Banner";

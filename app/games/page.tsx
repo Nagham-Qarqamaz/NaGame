@@ -15,16 +15,24 @@ export default function GamesPage() {
     const [currentPage, setCurrentPage] = useState(1);
     const games = useGameStore((state) => state.games);
     const search = useGameStore((state) => state.search);
-    const category = useGameStore((state) => state.category);
+    const categoriesSelected = useGameStore(
+        (state) => state.categoriesSelected ?? []
+    );
     const setSearch = useGameStore((state) => state.setSearch);
-    const setCategory = useGameStore((state) => state.setCategory);
+    const setCategoriesSelected = useGameStore(
+        (state) => state.setCategoriesSelected
+    );
 
+    // Filter games by search and multi-category
     const filteredGames = games.filter((game) => {
         const matchesSearch = game.title
             .toLowerCase()
             .includes(search.toLowerCase());
+
         const matchesCategory =
-            category === "All" || game.category === category;
+            categoriesSelected.length === 0 ||
+            categoriesSelected.includes(game.category);
+
         return matchesSearch && matchesCategory;
     });
 
@@ -33,6 +41,7 @@ export default function GamesPage() {
     // Reset to page 1 if current page exceeds total pages
     const safePage =
         currentPage > totalPages && totalPages > 0 ? 1 : currentPage;
+
     const startIndex = (safePage - 1) * GAMES_PER_PAGE;
     const endIndex = startIndex + GAMES_PER_PAGE;
     const currentGames = filteredGames.slice(startIndex, endIndex);
@@ -43,14 +52,14 @@ export default function GamesPage() {
 
     const handleClearFilters = () => {
         setSearch("");
-        setCategory("All");
+        setCategoriesSelected([]);
         setCurrentPage(1);
     };
 
     return (
         <div className="space-y-8 w-full">
             <GamesHeader />
-            <GameFilters />
+            <GameFilters onClearFilters={handleClearFilters} />
 
             <GameResultsInfo
                 startIndex={startIndex}

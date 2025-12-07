@@ -1,17 +1,14 @@
-"use client";
-
 import GameIframe from "./GameIframe";
 import GameSidebar from "./GameSidebar";
 import RelatedGames from "./RelatedGames";
 import { Game } from "@/types";
-import { useGameStore } from "@/stores/gameStore";
 
 interface Props {
     game: Game;
+    allGames: Game[];
 }
 
-export default function GameContainer({ game }: Props) {
-    const allGames = useGameStore((state) => state.games);
+export default function GameContainer({ game, allGames }: Props) {
 
     return (
         <div className="w-full">

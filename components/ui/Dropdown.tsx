@@ -26,6 +26,9 @@ export default function Dropdown({
                     onChange={(e) => onChange(e.target.value)}
                     className="px-4 py-3 pr-10 border border-secondary/30 rounded-xl bg-black text-foreground font-medium focus:border-secondary focus:shadow-[0_0_12px_var(--secondary)] transition-all duration-300 outline-none cursor-pointer appearance-none w-full"
                 >
+                    <option value="All" className="hidden">
+                        Choose Category
+                    </option>
                     {options.map((option) => (
                         <option
                             key={option}

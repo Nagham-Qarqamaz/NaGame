@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Button from "@/components/ui/Button";
+import ThemeLink from "../ui/ThemeLink";
 
 export default function Banner() {
     return (
@@ -17,9 +16,7 @@ export default function Banner() {
                     </div>
                     <div>just instant fun right in your browser.</div>
                 </div>
-                <Link href="/games">
-                    <Button text="Browse All Games" onClick={() => {}} />
-                </Link>
+                <ThemeLink text="Browse All Games" href="/games" />
             </div>
         </section>
     );

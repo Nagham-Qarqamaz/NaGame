@@ -1,5 +1,7 @@
 "use client";
 
+import Button from "../ui/Button";
+
 interface EmptyStateProps {
     onClearFilters: () => void;
 }
@@ -14,12 +16,7 @@ export default function GameEmptyState({ onClearFilters }: EmptyStateProps) {
             <p className="text-foreground/60 mb-4">
                 Try adjusting your search terms or category filter.
             </p>
-            <button
-                onClick={onClearFilters}
-                className="px-6 py-2 bg-primary/20 text-primary rounded-lg hover:bg-primary/30 hover:shadow-[0_0_12px_var(--primary)] transition-all duration-300 border border-primary/30"
-            >
-                Clear Filters
-            </button>
+            <Button text="Clear Filters" onClick={onClearFilters} />
         </div>
     );
 }

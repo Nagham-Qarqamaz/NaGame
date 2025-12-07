@@ -1,5 +1,3 @@
-"use client";
-
 import { Game } from "@/types";
 import GameCard from "./GameCard";
 
