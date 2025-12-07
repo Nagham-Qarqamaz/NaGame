@@ -34,7 +34,7 @@ A modern game hosting platform built with Next.js 16, React 19, and Tailwind CSS
 1. Clone the repository:
 
     ```bash
-    git clone git clone https://github.com/Nagham-Qarqamaz/NaGame
+    git clone https://github.com/Nagham-Qarqamaz/NaGame
     cd game-hosting
     ```
 
