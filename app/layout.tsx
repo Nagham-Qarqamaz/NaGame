@@ -35,7 +35,7 @@ export default function RootLayout({
                     <Header />
                     <Breadcrumbs />
                 </div>
-                <main className="flex-1">{children}</main>
+                <main>{children}</main>
                 <Footer />
             </body>
         </html>

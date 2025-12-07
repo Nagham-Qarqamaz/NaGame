@@ -8,12 +8,14 @@ import GameGrid from "@/components/games/GameGrid";
 import GameEmptyState from "@/components/games/GameEmptyState";
 import GameResultsInfo from "@/components/games/GameResultsInfo";
 import Pagination from "@/components/ui/Pagination";
+import Loading from "@/components/ui/Loading";
 
 const GAMES_PER_PAGE = 12;
 
 export default function GamesPage() {
     const [currentPage, setCurrentPage] = useState(1);
     const games = useGameStore((state) => state.games);
+    const isLoading = useGameStore((state) => state.isLoading);
     const search = useGameStore((state) => state.search);
     const categoriesSelected = useGameStore(
         (state) => state.categoriesSelected ?? []
@@ -55,6 +57,8 @@ export default function GamesPage() {
         setCategoriesSelected([]);
         setCurrentPage(1);
     };
+
+    if (isLoading) return <Loading />;
 
     return (
         <div className="space-y-8 w-full">

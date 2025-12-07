@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { Game } from "@/types";
-import { featuredGames, games } from "@/utils/constants";
+import { featuredGames, games as allGames } from "@/utils/constants";
 
 interface GameState {
     games: Game[];
@@ -8,11 +8,13 @@ interface GameState {
     search: string;
     categoriesSelected: string[];
     categories: string[];
+    isLoading: boolean;
 
     setGames: (games: Game[]) => void;
     fetchFeaturedGames: () => void;
     setSearch: (value: string) => void;
     setCategoriesSelected: (value: string[]) => void;
+    setLoading: (loading: boolean) => void;
 }
 
 export const useGameStore = create<GameState>((set) => ({
@@ -21,18 +23,22 @@ export const useGameStore = create<GameState>((set) => ({
     search: "",
     categoriesSelected: [],
     categories: [],
+    isLoading: true,
+    error: null,
 
     setGames: (games) =>
         set({
             games,
             categories: Array.from(new Set(games.map((g) => g.category))),
+            isLoading: false,
         }),
     fetchFeaturedGames: () => {
-        const featured = games.filter((game) =>
+        const featured = allGames.filter((game) =>
             featuredGames.includes(game.id)
         );
         set({ featuredGames: featured });
     },
     setSearch: (value) => set({ search: value }),
     setCategoriesSelected: (value) => set({ categoriesSelected: value }),
+    setLoading: (loading) => set({ isLoading: loading }),
 }));
