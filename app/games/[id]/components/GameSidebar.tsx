@@ -18,7 +18,7 @@ export default function GameSidebar({ game }: Props) {
     }
 
     return (
-        <div className="lg:w-[30%] rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-[0_0_16px_var(--primary)]">
+        <div className="rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-[0_0_16px_var(--primary)]">
             <Image
                 src={game.thumbnail}
                 alt={game.title}

@@ -9,7 +9,7 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="bg-black border-b border-gray-800 shadow-[0_4px_12px_rgba(0,255,255,0.1)]">
+        <header className="relative bg-black border-b border-gray-800 shadow-[0_4px_12px_rgba(0,255,255,0.1)] z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <div className="flex items-center">
@@ -74,35 +74,39 @@ export default function Header() {
                         </Link>
                     </nav>
                 </div>
-
-                {/* Mobile navigation */}
-                {isMenuOpen && (
-                    <nav className="sm:hidden py-4 border-t border-gray-800 flex flex-col space-y-2">
-                        <Link
-                            href="/"
-                            onClick={() => setIsMenuOpen(false)}
-                            className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
-                                pathname === "/"
-                                    ? "text-primary bg-primary/10 shadow-[0_0_12px_var(--primary)] border border-primary/30"
-                                    : "text-foreground hover:text-primary hover:shadow-[0_0_8px_var(--primary)] hover:bg-primary/5"
-                            }`}
-                        >
-                            Home
-                        </Link>
-                        <Link
-                            href="/games"
-                            onClick={() => setIsMenuOpen(false)}
-                            className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
-                                pathname.startsWith("/games")
-                                    ? "text-secondary bg-secondary/10 shadow-[0_0_12px_var(--secondary)] border border-secondary/30"
-                                    : "text-foreground hover:text-secondary hover:shadow-[0_0_8px_var(--secondary)] hover:bg-secondary/5"
-                            }`}
-                        >
-                            Games
-                        </Link>
-                    </nav>
-                )}
             </div>
+
+            {/* Mobile navigation - absolute overlay */}
+            <nav
+                className={`sm:hidden absolute top-full left-0 right-0 bg-black border-b border-gray-800 shadow-[0_4px_12px_rgba(0,255,255,0.1)] overflow-hidden transition-all duration-300 ease-in-out ${
+                    isMenuOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
+                }`}
+            >
+                <div className="px-4 py-4 flex flex-col space-y-2">
+                    <Link
+                        href="/"
+                        onClick={() => setIsMenuOpen(false)}
+                        className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                            pathname === "/"
+                                ? "text-primary bg-primary/10 shadow-[0_0_12px_var(--primary)] border border-primary/30"
+                                : "text-foreground hover:text-primary hover:shadow-[0_0_8px_var(--primary)] hover:bg-primary/5"
+                        }`}
+                    >
+                        Home
+                    </Link>
+                    <Link
+                        href="/games"
+                        onClick={() => setIsMenuOpen(false)}
+                        className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                            pathname.startsWith("/games")
+                                ? "text-secondary bg-secondary/10 shadow-[0_0_12px_var(--secondary)] border border-secondary/30"
+                                : "text-foreground hover:text-secondary hover:shadow-[0_0_8px_var(--secondary)] hover:bg-secondary/5"
+                        }`}
+                    >
+                        Games
+                    </Link>
+                </div>
+            </nav>
         </header>
     );
 }

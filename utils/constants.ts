@@ -10,30 +10,12 @@ export const featuredGames = [
     "675852fa01924aa2bc4f2723c1349d05",
     "9bde41f232834eff9ea81554ecee8279",
     "9bc4eb0396574402853a84aa05862548",
+    "1a09e82198a8432da4f0a9c103187f7e",
+    "8f2e6ad8b8814dc6880a8c52b7e25e30",
+    "63dd731e83704e13b300deff8109f39a",
 ];
 
 export const games: Game[] = [
-    {
-        id: "1b5315fd207a446daf4cbf9df971e5b0",
-        title: "Chiron City Driver",
-        description:
-            "Get ready to skid the wheels of a stunning sports car through an expansive morning city map! Customize and upgrade your sports car with cool upgradables and become the best driver in the city. Take your dog with you in 3 driving challenges and conquer the missions together. Use nitro to beat slow traffic and beat all speed, stunt and drift triggers spread across the map. Are you ready to show your driving skills? Prove yourself!",
-        thumbnail:
-            "https://img.gamedistribution.com/1b5315fd207a446daf4cbf9df971e5b0-512x384.jpg",
-        iframeUrl:
-            "https://html5.gamedistribution.com/1b5315fd207a446daf4cbf9df971e5b0/?gd_sdk_referrer_url=https://yourwebsite.com/games/chiron-city-driver",
-        category: "Racing & Driving",
-    },
-    {
-        id: "2541c94a787f4c58b94636a38c3aa060",
-        title: "Epic Racing - Descent on Cars",
-        description: `To tear yourself and your neighbor to shreds, but to reach the finish line first is an "Epic Racing - Descent on Cars"! Epic collisions, a serious fight to the finish line and a million ways to bend and twist metal - that's what awaits you in the game "Epic Racing - Descent on Cars". Burn rubber and tear metal - the game begins!`,
-        thumbnail:
-            "https://img.gamedistribution.com/2541c94a787f4c58b94636a38c3aa060-512x384.jpg",
-        iframeUrl:
-            "https://html5.gamedistribution.com/2541c94a787f4c58b94636a38c3aa060/?gd_sdk_referrer_url=https://gamedistribution.com/games/epic-racing-descent-on-cars/",
-        category: "Racing & Driving",
-    },
     {
         id: "a508edbaeb1d4213aecebbe4115670c2",
         title: "Sorting Xmas Balls",
@@ -55,6 +37,27 @@ export const games: Game[] = [
         iframeUrl:
             "https://html5.gamedistribution.com/76c614d8563843d1853f7628eabf69b3/?gd_sdk_referrer_url=https://gamedistribution.com/games/winter-wonderland-mahjong/",
         category: "Mahjong & Connect",
+    },
+    {
+        id: "1b5315fd207a446daf4cbf9df971e5b0",
+        title: "Chiron City Driver",
+        description:
+            "Get ready to skid the wheels of a stunning sports car through an expansive morning city map! Customize and upgrade your sports car with cool upgradables and become the best driver in the city. Take your dog with you in 3 driving challenges and conquer the missions together. Use nitro to beat slow traffic and beat all speed, stunt and drift triggers spread across the map. Are you ready to show your driving skills? Prove yourself!",
+        thumbnail:
+            "https://img.gamedistribution.com/1b5315fd207a446daf4cbf9df971e5b0-512x384.jpg",
+        iframeUrl:
+            "https://html5.gamedistribution.com/1b5315fd207a446daf4cbf9df971e5b0/?gd_sdk_referrer_url=https://yourwebsite.com/games/chiron-city-driver",
+        category: "Racing & Driving",
+    },
+    {
+        id: "2541c94a787f4c58b94636a38c3aa060",
+        title: "Epic Racing - Descent on Cars",
+        description: `To tear yourself and your neighbor to shreds, but to reach the finish line first is an "Epic Racing - Descent on Cars"! Epic collisions, a serious fight to the finish line and a million ways to bend and twist metal - that's what awaits you in the game "Epic Racing - Descent on Cars". Burn rubber and tear metal - the game begins!`,
+        thumbnail:
+            "https://img.gamedistribution.com/2541c94a787f4c58b94636a38c3aa060-512x384.jpg",
+        iframeUrl:
+            "https://html5.gamedistribution.com/2541c94a787f4c58b94636a38c3aa060/?gd_sdk_referrer_url=https://gamedistribution.com/games/epic-racing-descent-on-cars/",
+        category: "Racing & Driving",
     },
     {
         id: "1a09e82198a8432da4f0a9c103187f7e",
